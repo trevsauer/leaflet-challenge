@@ -87,17 +87,17 @@ d3.json(queryUrl, function(data) {
 // call createMap function to call earthquake data
 function createMap(earthquakes) {
 
-    // set up lightmap layer
-    var lightmap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    // set up darkmap layer
+    var darkmap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
-        id: 'mapbox/light-v10',
+        id: 'mapbox/dark-v10',
         accessToken: "pk.eyJ1IjoiYWx4cHJ5IiwiYSI6ImNrYW9saHZjNDA0Z3ozMG82cHZpcm0xbm8ifQ.yM3ZhZhGelQpcJBz0wtaiw"
     });
 
-    // set up baseMaps to store lightmap layer
+    // set up baseMaps to store darkmap layer
     var baseMaps = {
-        "Light Map": lightmap
+        "Dark Map": darkmap
     };
 
     // set up overlayMaps 
@@ -111,7 +111,7 @@ function createMap(earthquakes) {
             40.09, -110.71
           ],
           zoom: 5,
-          layers: [lightmap, earthquakes]
+          layers: [darkmap, earthquakes]
         });
       
     L.control.layers(baseMaps, overlayMaps, {
