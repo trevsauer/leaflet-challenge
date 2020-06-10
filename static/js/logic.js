@@ -121,7 +121,7 @@ function createMap(earthquakes) {
   // set up the legend
   var legend = L.control({ position: "bottomleft" });
   
-  // add legend capabilities where magnitude designations / selection is stored and utilized by user
+  // add legend capabilities where color scole of the earthquake magnitude is shown 
   legend.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
     var magScale = [0, 1, 2, 3, 4, 5]
